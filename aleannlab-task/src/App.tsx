@@ -1,13 +1,14 @@
 import React from 'react';
 import './css/page.css';
+import JobList from './jobList/JobList';
 
 function App() {
 	return (
 		<div className="wrapper">
 			<div className='page'>
-				<div> test header</div>
-				<main className='main'>main</main>
-				<div>test footer</div>
+				<main className='main'>
+					<JobList/>
+				</main>
 			</div>
 		</div>
 	);

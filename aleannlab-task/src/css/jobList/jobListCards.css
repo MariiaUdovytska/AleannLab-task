@@ -1,0 +1,60 @@
+.cardd{
+	display: flex;
+	flex-direction: row;
+	margin: 0px -5px;
+}
+.cardd__info{
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 75%;
+	padding: 0px 5px;
+}
+.cardd__info img{
+	display: block;
+	min-width: 85px;
+	min-height: 85px;
+	border-radius: 45px;
+}
+.cardd__info-common{
+	padding-left: 25px;
+	max-width: 792px;
+}
+.cardd__info-common h2{
+	color: #3A4562;
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.cardd__info-common div{
+	color: #878D9D;
+	margin-top: 8px;
+}
+.cardd__info-common div .bi-geo-alt-fill::before{
+	color: #D8D8D8;
+	margin-right: 8px;
+}
+
+.cardd__icons{
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 25%;
+	margin: 0px -15px;
+	padding: 0px 5px;
+}
+.cardd__icons-stars,
+.cardd__icons-posted{
+	padding: 0px 15px;
+}
+
+.cardd__icons-posted{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cardd__icons-posted .bi-bookmark{
+	color: #70778B;
+	align-self: end;
+}
+.cardd__icons-posted span{
+	color: #878D9D;
+	text-align: right;
+}
