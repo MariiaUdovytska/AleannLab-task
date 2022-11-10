@@ -44,7 +44,15 @@
 .cardd__icons-posted{
 	padding: 0px 15px;
 }
-
+.cardd__icons-stars{
+	align-self: center;
+}
+.cardd__icons-stars .bi-star-fill{
+	color: #878D9D;
+}
+.cardd__icons-stars .bi-star-fill:hover{
+	color: #38415D;
+}
 .cardd__icons-posted{
 	display: flex;
 	flex-direction: column;
