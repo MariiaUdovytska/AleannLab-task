@@ -34,10 +34,5 @@
 
 .main{
 	flex: 1 1 auto;
-	padding: 29px 0px 64px 0px;
-}
-@media (max-width:768px){
-	.main{
-		padding: 50px 0px 0px 0px;
-	}
+	/* padding: 29px 0px 64px 0px; */
 }

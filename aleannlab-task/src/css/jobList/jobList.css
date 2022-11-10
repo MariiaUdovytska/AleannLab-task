@@ -1,4 +1,7 @@
-.job-list{}
+.job-list{
+	padding-top: 29px;
+	padding-bottom: 64px;
+}
 .job-list__body{}
 .job-list__body ul{
 	display: flex;
@@ -10,4 +13,21 @@
 	margin-bottom: 8px;
 	box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
 	border-radius: 8px;
+}
+.job-list__body ul li:hover{
+	background-color:#EFF0F5;
+}
+@media (max-width:748px){
+	.job-list__body ul li{
+		background-color:#EFF0F5;
+		padding:17px 16px 27px;
+	}
+	.job-list__body ul li:hover{
+		background-color:#fbfcff1b;
+	}
+}
+@media (max-width:380px){
+	.job-list__body ul li{
+		padding:17px 8px 27px;
+	}
 }

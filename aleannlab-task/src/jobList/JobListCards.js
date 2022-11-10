@@ -6,7 +6,9 @@ function JobListCards(props) {
 	return (
 		<div className='cardd'>
 			<div className='cardd__info'>
-				<img src={props.image} alt='place' width={85} height={85}></img>
+				<div className='cardd__info-img'>
+					<img src={props.image} alt='place'></img>
+				</div>
 				<div className='cardd__info-common'>
 					<h2>{props.title}</h2>
 					<div>Department name • {props.name}</div>
@@ -19,7 +21,10 @@ function JobListCards(props) {
 			<div className='cardd__icons'>
 				<Stars />
 				<div className='cardd__icons-posted'>
-					<i className="bi bi-bookmark"></i>
+					<div className='cardd__icons-posted-bookmark'>
+						<i className="bi bi-bookmark"></i>
+						<i className="bi bi-bookmark-fill"></i>
+					</div>
 					<span>Posted 2 days ago</span>
 				</div>
 			</div>

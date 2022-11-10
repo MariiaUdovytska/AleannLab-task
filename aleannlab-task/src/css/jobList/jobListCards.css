@@ -9,10 +9,15 @@
 	flex: 1 1 75%;
 	padding: 0px 5px;
 }
-.cardd__info img{
-	display: block;
+.cardd__info-img{
 	min-width: 85px;
-	min-height: 85px;
+	height: 85px;
+}
+.cardd__info-img img{
+	display: block;
+	min-width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: 45px;
 }
 .cardd__info-common{
@@ -36,6 +41,7 @@
 .cardd__icons{
 	display: flex;
 	flex-direction: row;
+	justify-content: end;
 	flex: 1 1 25%;
 	margin: 0px -15px;
 	padding: 0px 5px;
@@ -49,6 +55,7 @@
 }
 .cardd__icons-stars .bi-star-fill{
 	color: #878D9D;
+	margin-right: 2px;
 }
 .cardd__icons-stars .bi-star-fill:hover{
 	color: #38415D;
@@ -58,11 +65,87 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.cardd__icons-posted .bi-bookmark{
-	color: #70778B;
+.cardd__icons-posted-bookmark{
 	align-self: end;
+	color: #70778B;
+	position: relative;
+}
+.cardd__icons-posted-bookmark .bi-bookmark-fill{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.cardd__icons-posted-bookmark .bi-bookmark-fill:hover{
+	opacity: 1;
+	transition: all 0.4s ease-in-out;
 }
 .cardd__icons-posted span{
 	color: #878D9D;
 	text-align: right;
+}
+@media (max-width:1112px) {
+	.cardd__info{
+		flex: 1 1 70%;
+	}
+	.cardd__icons{
+		flex: 1 1 30%;
+	}
+}
+@media (max-width:956px) {
+	.cardd__info{
+		flex: 1 1 65%;
+	}
+	.cardd__icons{
+		flex: 1 1 35%;
+	}
+	.cardd__icons{
+		margin: 0px -5px;
+	}
+	.cardd__icons-stars,
+	.cardd__icons-posted{
+		padding: 0px 5px;
+	}
+}
+@media (max-width:748px){
+	.cardd{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.cardd__icons{
+		margin-bottom: 17px;
+		justify-content: space-between;
+	}
+	.cardd__icons-stars{
+		margin-left: 85px;
+	}
+	.cardd__icons-posted{
+		flex-direction: row-reverse;
+		font-size: 0.875rem;
+	}
+	.cardd__icons-posted span{
+		margin-right: 15px;
+	}
+	.cardd__info-common {
+		padding-left: 18px;
+	}
+	.cardd__info-img{
+		min-width: 65px;
+		height: 65px;
+	}
+	.cardd__info-common h2{
+		font-size: 1.125rem;
+		font-weight: 400;
+	}
+	.cardd__icons-stars .bi-star-fill::before{
+		font-size: 10px;
+	}
+}
+@media (max-width:380px){
+	.cardd__info-common {
+		padding-left: 10px;
+	}
+	.cardd__icons-stars{
+		margin-left: 75px;
+	}
 }
