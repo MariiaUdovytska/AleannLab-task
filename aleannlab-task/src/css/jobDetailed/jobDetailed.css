@@ -1,0 +1,173 @@
+.job-detailed{
+	display: flex;
+	flex-direction: row;
+	padding-top: 56px;
+	padding-bottom: 162px;
+	color: #3A4562;
+}
+.job-detailed__body{
+	flex: 1 1 64%;
+	padding-right: 67px;
+}
+
+.job-detailed__body-header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid #3a45621f;
+	line-height: 2.7rem;
+	margin-bottom: 40px;
+}
+.job-detailed__body-header h1{
+	font-weight: 700;
+	font-size: 1.75rem;
+}
+.job-detailed__body-header-icons{
+	display: flex;
+	flex-direction: row;
+	font-size: 1.125rem;
+	margin: 0px -15px;
+}
+.job-detailed__body-header-bookmark{
+	padding: 0px 15px;
+	position: relative;
+}
+.job-detailed__body-header-bookmark .bi-bookmark-fill{
+	position: absolute;
+	top: 0;
+	left: 15px;
+	opacity: 0;
+}
+.job-detailed__body-header-bookmark .bi-bookmark-fill:hover{
+	opacity: 1;
+	transition: all 0.4s ease-in-out;
+}
+.job-detailed__body-header-bookmark span{
+	margin-left: 10px;
+}
+.job-detailed__body-header-share{
+	padding: 0px 15px;
+}
+.job-detailed__body-header-share span{
+	padding-left: 10px;
+}
+
+.job-detailed__body-unbtn{}
+.job-detailed__body-unbtn button,
+.job-detailed__body-downbtn button{
+	background-color: #384564;
+	border-radius: 8px;
+	padding: 18px 30px;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.75rem;
+	color: #fff;
+	margin-bottom: 32px;
+}
+.job-detailed__body-unbtn button:hover{
+	background-color: #3c4d75;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
+	transition: all 0.4s;
+}
+
+.job-detailed__body-main{}
+.job-detailed__body-main-title{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+.job-detailed__body-main-title h2{
+	font-weight: 700;
+	font-size: 1.5rem;
+	flex: 0 1 65%;
+	margin-bottom: 8px;
+}
+.job-detailed__body-main-salary{
+	display: flex;
+	flex-direction: column;
+	font-size: 1.25rem;
+	font-weight: 700;
+	flex: 0 1 auto;
+	margin-bottom: 8px;
+}
+.job-detailed__body-main-salary span{
+	font-size: 1.125rem;
+	font-weight: 400;
+	flex: 0 1 100%;
+}
+.job-detailed__body-main-posted{
+	font-size: 1.125rem;
+	color: rgba(56, 65, 93, 0.355988);
+	margin-bottom: 8px;
+}
+
+.job-detailed__body-downbtn{}
+.job-detailed__body-downbtn button{}
+
+.job-detailed__map{
+	flex: 1 1 36%;
+	padding-left: 67px;
+}
+.job-detailed__map h4{
+	display: none;
+}
+
+@media(max-width:865px){
+	.job-detailed__body{
+		flex: 1 1 70%;
+		padding-right: 40px;
+	}
+	.job-detailed__map{
+		flex: 1 1 30%;
+		padding-left: 40px;
+	}
+}
+@media (max-width:748px){
+	.job-detailed__body-header{
+		flex-direction: column;
+		border-bottom: none;
+		margin-bottom: 32px;
+	}
+	.job-detailed__body-header h1{
+		border-bottom: 1px solid #3a45621f;
+		margin-bottom: 20px;
+	}
+	.job-detailed__body-header-icons{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	.job-detailed__body-unbtn{
+		display: none;
+	}
+	.job-detailed__body-main-title h2{
+		flex: 0 1 100%;
+		order: 1;
+	}
+	.job-detailed__body-main-salary{
+		order: 3;
+		align-items: end;
+		flex-direction: column-reverse;
+	}
+	.job-detailed__body-main-posted{
+		order: 2;
+		align-self: center;
+		font-size: 0.812rem;
+	}
+}
+@media (max-width:638px){
+	.job-detailed{
+		flex-direction: column;
+	}
+	.job-detailed__body{
+		padding-right: 0px;
+	}
+	.job-detailed__map{
+		padding-left: 0px;
+	}
+	.job-detailed__map h4{
+		display: block;
+		font-weight: 700;
+		font-size: 1.75rem;
+		margin-bottom: 30px;
+	}
+}
