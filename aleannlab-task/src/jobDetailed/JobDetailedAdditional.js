@@ -19,19 +19,40 @@ function JobDetailedAdditional(props) {
 				{additional.benefits[index]}
 			</li>);
 	}
+
+	let imagesArray = [];
+	for (let index = 0; index < additional.pictures.length; index++) {
+		imagesArray.push(
+			<li key={index}>
+				<img
+					src={additional.pictures[index]}
+					alt='attached-pictures'>
+				</img>
+			</li>
+		);
+	}
+
 	return (
-		<div className='job-detailed__body-additional'>
-			<h4>Additional info</h4>
-			<div className='job-detailed__body-employment'>
-				<h5>Employment type</h5>
-				<ul>
-					{employmentLi}
-				</ul>
+		<div className='additional'>
+			<div className='additional-info'>
+				<h4>Additional info</h4>
+				<div className='additional-info__employment'>
+					<h5>Employment type</h5>
+					<ul>
+						{employmentLi}
+					</ul>
+				</div>
+				<div className='additional-info__benefits'>
+					<h5>Benefits</h5>
+					<ul>
+						{benefitsLi}
+					</ul>
+				</div>
 			</div>
-			<div className='job-detailed__body-benefits'>
-				<h5>Benefits</h5>
+			<div className='attached-imgs'>
+				<h4>Attached images</h4>
 				<ul>
-					{benefitsLi}
+					{imagesArray}
 				</ul>
 			</div>
 		</div>
