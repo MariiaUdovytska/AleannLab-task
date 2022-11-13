@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/jobDetailed/jobDetailed.css';
 import dataResponse from '../data/dataResponse.json';
+import JobDetailedAdditional from './JobDetailedAdditional';
+import JobDetailedDescription from './JobDetailedDescription';
 
 var isDebug = false;
 
@@ -10,7 +12,7 @@ class JobDetailed extends React.Component {
 		this.state = {
 			error: null,
 			isLoaded: false,
-			jobs: [],
+			jobs: []
 		};
 	}
 
@@ -58,12 +60,13 @@ class JobDetailed extends React.Component {
 
 	render() {
 		const { error, isLoaded, jobs } = this.state;
-		const job = jobs[0];
+
 		if (error) {
 			return <p> Error {error.message}</p>
 		} else if (!isLoaded) {
 			return <p> Loading...</p>
 		} else {
+			const job = jobs[0];
 			return (
 				<div className='job-detailed container-detailed'>
 					<div className='job-detailed__body'>
@@ -87,20 +90,18 @@ class JobDetailed extends React.Component {
 						<div className='job-detailed__body-main'>
 							<div className='job-detailed__body-main-title'>
 								<h2>{job.title}</h2>
-
 								<div className='job-detailed__body-main-salary'>
 									€ {job.salary}
 									<span>Brutto, per year</span>
 								</div>
 								<span className='job-detailed__body-main-posted'>Posted 2 days ago</span>
 							</div>
-
-							<p>{job.description}</p>
-
+							<JobDetailedDescription description={job.description} />
 						</div>
 						<div className='job-detailed__body-downbtn'>
 							<button type='button'>Apply now</button>
 						</div>
+						<JobDetailedAdditional additional={job} />
 					</div>
 					<div className='job-detailed__map'>
 						<h4>Contacts</h4>

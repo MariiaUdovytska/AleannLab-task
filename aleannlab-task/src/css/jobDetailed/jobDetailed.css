@@ -104,6 +104,8 @@
 .job-detailed__body-downbtn{}
 .job-detailed__body-downbtn button{}
 
+
+
 .job-detailed__map{
 	flex: 1 1 36%;
 	padding-left: 67px;
@@ -152,6 +154,10 @@
 		order: 2;
 		align-self: center;
 		font-size: 0.812rem;
+	}
+	.job-detailed__body-downbtn{
+		display: flex;
+		justify-content: center;
 	}
 }
 @media (max-width:638px){

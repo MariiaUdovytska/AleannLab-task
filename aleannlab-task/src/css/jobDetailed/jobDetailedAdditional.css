@@ -1,0 +1,48 @@
+.job-detailed__body-additional{}
+.job-detailed__body-additional h4{
+	font-weight: 700;
+	font-size: 1.75rem;
+	margin-bottom: 20px;
+	line-height: 2.7rem;
+	border-bottom: 1px solid #3a45621f;
+}
+.job-detailed__body-employment h5,
+.job-detailed__body-benefits h5{
+	font-size: 1.125rem;
+	margin-bottom: 10px;
+}
+.job-detailed__body-benefits h5{
+	margin-top: 15px;
+}
+.job-detailed__body-employment ul,
+.job-detailed__body-benefits ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.job-detailed__body-employment ul li,
+.job-detailed__body-benefits ul li{
+	flex: 1 1 31.333%;
+	max-width: 32.333%;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 17px 4px;
+	text-align: center;
+	color: #55699E;
+	background: rgba(161, 177, 219, 0.317343);
+	border: 1px solid rgba(85, 105, 158, 0.3);
+	border-radius: 8px;
+	margin-bottom: 8px;
+	margin-right: 8px;
+}
+.job-detailed__body-employment ul li:nth-child(3n+3),
+.job-detailed__body-benefits ul li:nth-child(3n+3){
+	margin-right: 0px;
+}
+.job-detailed__body-benefits{}
+.job-detailed__body-benefits ul{}
+.job-detailed__body-benefits ul li{
+	background: rgba(255, 207, 0, 0.15);
+	border: 1px solid #FFCF00;
+	border-radius: 8px;
+	color: #988B49;
+}
