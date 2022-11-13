@@ -9,3 +9,20 @@
 	font-weight: 300;
 	margin-bottom: 30px;
 }
+.description ul{
+	margin-bottom: 30px;
+}
+.description ul li{
+	position: relative;
+}
+.description ul li::before{
+	position: absolute;
+	top: 50%;
+	transform: translate(0,-50%);
+	left: -12px;
+	content: '';
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background-color: #384564A1;
+}
