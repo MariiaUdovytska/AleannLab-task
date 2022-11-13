@@ -6,8 +6,16 @@
 .description p{
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.125rem;
+	line-height: 1.3rem;
 	font-weight: 300;
 	margin-bottom: 30px;
+}
+.description span,
+.description ul{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.125rem;
+	line-height: 1.3rem;
+	font-weight: 300;
 }
 .description ul{
 	margin-bottom: 30px;
@@ -25,4 +33,17 @@
 	width: 9px;
 	height: 9px;
 	background-color: #384564A1;
+}
+@media (max-width:748px){
+	.description ul li{
+		position: unset;
+	}
+	.description ul li::before{
+		position: unset;
+		content: '';
+		display: inline-block;
+		margin-left: 1px;
+		margin-right: 12px;
+		vertical-align: bottom;
+	}
 }

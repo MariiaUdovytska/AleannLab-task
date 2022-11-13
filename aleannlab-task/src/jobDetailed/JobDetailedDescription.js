@@ -25,6 +25,7 @@ function JobDetailedDescription(props) {
 			<h3>Responsopilities:</h3>
 			<p>{responsopilities}</p>
 			<h3>Compensation & Benefits:</h3>
+			<span>Our physicians enjoy a wide range of benefits, including:</span>
 			<ul>
 				{compensationLi}
 			</ul>
