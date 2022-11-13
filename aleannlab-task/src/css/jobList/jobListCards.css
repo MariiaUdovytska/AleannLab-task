@@ -60,6 +60,9 @@
 .cardd__icons-stars .bi-star-fill:hover{
 	color: #38415D;
 }
+.cardd__icons-stars .star-selected{
+	color: #38415D;
+}
 .cardd__icons-posted{
 	display: flex;
 	flex-direction: column;
