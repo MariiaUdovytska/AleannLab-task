@@ -1,4 +1,3 @@
-.additional{}
 .additional-info h4,
 .attached-imgs h4{
 	font-weight: 700;
@@ -50,18 +49,21 @@
 }
 .attached-imgs{
 	margin-top: 78px;
+	overflow: hidden;
 }
 .attached-imgs ul{
 	display: flex;
 	margin: 0px -4px;
 	flex-direction: row;
-	overflow: hidden;
+	
 }
 .attached-imgs ul li{
 	padding: 0px 4px;
 	margin-bottom: 8px;
 	max-height: 133px;
-	max-width: 200px;
+	flex: 1 1 33.333%;
+	min-width: 33.333;
+	transition: transform 1s;
 }
 .attached-imgs ul li img{
 	display: block;
@@ -70,6 +72,10 @@
 	width: 100%;
 	border-radius: 8px;
 }
+.attached-imgs__btns{
+	display: none;
+}
+
 @media (max-width:748px){
 	.additional{
 		display: flex;
@@ -80,9 +86,32 @@
 	.attached-imgs ul li{
 		min-height: 133px;
 		min-width: 200px;
+		margin-bottom: 0px;
 	}
 	.additional-info h4{
 		width: 82%;
 		border-bottom: 1px solid #3a45621f;
+	}
+}
+@media (max-width:626px){
+	.attached-imgs__btns{
+		display: block;
+		margin-left: 15%;
+	}
+	.attached-imgs__btns button{
+		background-color: transparent;
+	}
+	.attached-imgs__btns button .bi-arrow-left{
+		margin-right: 15px;
+	}
+	.attached-imgs__btns button .bi-arrow-left::before,
+	.attached-imgs__btns button .bi-arrow-right::before{
+		color: #3a4562e6;
+		font-size: 28px;
+	}
+	.attached-imgs__btns button:hover .bi-arrow-left::before,
+	.attached-imgs__btns button:hover .bi-arrow-right::before{
+		color: rgba(73, 80, 16, 0.871);
+		transition: color 0.3s;
 	}
 }

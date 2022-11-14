@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/jobDetailed/jobDetailedAdditional.css';
 
 function JobDetailedAdditional(props) {
 	let additional = props.additional;
+
+	const [move, setMove] = useState(0);
+
+	const [touchPosition, setTouchPosition] = useState(null);
+
+	const handleLeft = () => {
+		if (move === 0)
+			return;
+		setMove(move - 1);
+	};
+
+	const handleRight = () => {
+		if (move === additional.pictures.length - ((props.sizeWidthType == 'desktop') ? 3 : 1))
+			return;
+		setMove(move + 1);
+	};
+
+	let handleTouchStart = (e) => {
+		let touchDown = e.touches[0].clientX;
+		setTouchPosition(touchDown);
+	}
+
+	let handleTouchMove = (e) => {
+		const touchDown = touchPosition
+		if (touchDown === null) {
+			return
+		}
+		const currentTouch = e.touches[0].clientX
+		const diff = touchDown - currentTouch
+		if (diff > 5) {
+			handleRight();
+		}
+		if (diff < -5) {
+			handleLeft();
+		}
+		setTouchPosition(null);
+	}
 
 	let employmentLi = [];
 	for (let index = 0; index < additional.employment_type.length; index++) {
@@ -20,10 +57,11 @@ function JobDetailedAdditional(props) {
 			</li>);
 	}
 
+	let value = `translateX(${-100 * move}%)`;
 	let imagesArray = [];
 	for (let index = 0; index < additional.pictures.length; index++) {
 		imagesArray.push(
-			<li key={index}>
+			<li key={index} style={{ transform: value }}>
 				<img
 					src={additional.pictures[index]}
 					alt='attached-pictures'>
@@ -51,9 +89,16 @@ function JobDetailedAdditional(props) {
 			</div>
 			<div className='attached-imgs'>
 				<h4>Attached images</h4>
-				<ul>
+				<ul
+					onTouchStart={handleTouchStart}
+					onTouchMove={handleTouchMove}
+				>
 					{imagesArray}
 				</ul>
+				<div className='attached-imgs__btns'>
+					<button type='button' onClick={handleLeft}><i className="bi bi-arrow-left"></i></button>
+					<button type='button' onClick={handleRight}><i className="bi bi-arrow-right"></i></button>
+				</div>
 			</div>
 		</div>
 	)
