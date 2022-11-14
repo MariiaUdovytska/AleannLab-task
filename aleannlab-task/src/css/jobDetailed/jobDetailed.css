@@ -1,3 +1,6 @@
+/* .pageM{
+	background-color: red;
+} */
 .job-detailed{
 	display: flex;
 	flex-direction: row;
@@ -104,6 +107,27 @@
 .job-detailed__body-downbtn{}
 .job-detailed__body-downbtn button{}
 
+.job-detailed__body-return{
+	margin-top: 81px;
+	margin-left: -70px;
+}
+.job-detailed__body-return button{
+	padding: 17px 23px;
+	display: block;
+	background-color: #3845642f;
+	color: #3A4562;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+}
+.job-detailed__body-return button .bi-chevron-left{
+	margin-right: 14px;
+}
+.job-detailed__body-return button .bi-chevron-left::before{
+	color:#384564e7;
+	font-size: 15px;
+}
 
 
 .job-detailed__map{
@@ -113,7 +137,16 @@
 .job-detailed__map h4{
 	display: none;
 }
-
+@media(max-width:1412px){
+	.job-detailed__body-return{
+		margin-left: -40px;
+	}
+}
+@media(max-width:1356px){
+	.job-detailed__body-return{
+		margin-left: 0px;
+	}
+}
 @media(max-width:865px){
 	.job-detailed__body{
 		flex: 1 1 70%;
@@ -159,8 +192,9 @@
 		display: flex;
 		justify-content: center;
 	}
-}
-@media (max-width:638px){
+	.job-detailed__body-return{
+		display: none;
+	}
 	.job-detailed{
 		flex-direction: column;
 	}

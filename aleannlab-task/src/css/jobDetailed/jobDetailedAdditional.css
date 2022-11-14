@@ -82,7 +82,7 @@
 		min-width: 200px;
 	}
 	.additional-info h4{
-	width: 82%;
-	border-bottom: 1px solid #3a45621f;
-}
+		width: 82%;
+		border-bottom: 1px solid #3a45621f;
+	}
 }
