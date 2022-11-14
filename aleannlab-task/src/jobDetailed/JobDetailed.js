@@ -4,7 +4,7 @@ import dataResponse from '../data/dataResponse.json';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
 
-var isDebug = false;
+var isDebug = true;
 
 class JobDetailed extends React.Component {
 	constructor(props) {
@@ -12,12 +12,32 @@ class JobDetailed extends React.Component {
 		this.state = {
 			error: null,
 			isLoaded: false,
+			sizeWidthType: 'desktop',
 			jobs: []
 		};
 	}
 
+	getWindowDimensions = () => {
+		const { innerWidth: width } = window;
+		return width;
+	}
+
+	handleWindowDimensions = () => {
+		let width = this.getWindowDimensions()
+		if (width <= 626)
+			this.setState({ sizeWidthType: 'tablet' });
+		else
+			this.setState({ sizeWidthType: 'desktop' });
+	}
+
 	componentDidMount() {
 		this.loadData();
+		this.handleWindowDimensions();
+		window.addEventListener('resize', this.handleWindowDimensions);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.handleWindowDimensions);
 	}
 
 	mapData = (data) => {
@@ -101,7 +121,13 @@ class JobDetailed extends React.Component {
 						<div className='job-detailed__body-downbtn'>
 							<button type='button'>Apply now</button>
 						</div>
-						<JobDetailedAdditional additional={job} />
+						<JobDetailedAdditional additional={job} sizeWidthType={this.state.sizeWidthType} />
+						<div className='job-detailed__body-return'>
+							<button>
+								<i className="bi bi-chevron-left"></i>
+								RETURN TO JOB BOARD
+							</button>
+						</div>
 					</div>
 					<div className='job-detailed__map'>
 						<h4>Contacts</h4>
