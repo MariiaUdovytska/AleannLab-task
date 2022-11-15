@@ -1,10 +1,11 @@
 
 import React from 'react';
 import '../css/jobList/jobList.css';
+import { Link } from 'react-router-dom';
 import dataResponse from '../data/dataResponse.json';
 import JobListCards from './JobListCards';
 
-var isDebug = true;
+var isDebug = false;
 
 class JobList extends React.Component {
 	constructor(props) {
@@ -64,15 +65,21 @@ class JobList extends React.Component {
 
 		for (let index = 0; index < jobs.length; index++) {
 			const element = jobs[index];
+			let link = `/jobDetailed?id=${element.id}`;
+			if (element.id === undefined) {
+				link = '/';
+			}
 			arrayLi.push(
 				<li key={index}>
-					<JobListCards
-						id={element.id}
-						title={element.title}
-						image={element.pictures[1]}
-						name={element.name}
-						updatedAt={element.updatedAt}
-					/>
+					<Link to={link}>
+						<JobListCards
+							id={element.id}
+							title={element.title}
+							image={element.pictures[1]}
+							name={element.name}
+							updatedAt={element.updatedAt}
+						/>
+					</Link>
 				</li>);
 		}
 		if (error) {

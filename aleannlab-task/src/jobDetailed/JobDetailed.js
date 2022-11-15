@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/jobDetailed/jobDetailed.css';
 import dataResponse from '../data/dataResponse.json';
 import DataCalculator from '../dataCalculator/DataCalculator';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
 
-var isDebug = true;
+var isDebug = false;
 
 class JobDetailed extends React.Component {
 	constructor(props) {
@@ -124,10 +125,12 @@ class JobDetailed extends React.Component {
 						</div>
 						<JobDetailedAdditional additional={job} sizeWidthType={this.state.sizeWidthType} />
 						<div className='job-detailed__body-return'>
-							<button>
-								<i className="bi bi-chevron-left"></i>
-								RETURN TO JOB BOARD
-							</button>
+							<Link to="/jobList">
+								<button type='button' >
+									<i className="bi bi-chevron-left"></i>
+									RETURN TO JOB BOARD
+								</button>
+							</Link>
 						</div>
 					</div>
 					<div className='job-detailed__map'>
