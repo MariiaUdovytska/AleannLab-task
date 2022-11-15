@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/jobList/jobListCards.css';
+import DataCalculator from '../dataCalculator/DataCalculator';
 import Stars from '../stars/Stars';
 
 function JobListCards(props) {
@@ -25,7 +26,7 @@ function JobListCards(props) {
 						<i className="bi bi-bookmark"></i>
 						<i className="bi bi-bookmark-fill"></i>
 					</div>
-					<span>Posted 2 days ago</span>
+					<DataCalculator updatedAt={props.updatedAt} class={false} />
 				</div>
 			</div>
 		</div>

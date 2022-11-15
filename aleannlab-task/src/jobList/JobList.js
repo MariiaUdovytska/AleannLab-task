@@ -4,7 +4,7 @@ import '../css/jobList/jobList.css';
 import dataResponse from '../data/dataResponse.json';
 import JobListCards from './JobListCards';
 
-var isDebug = false;
+var isDebug = true;
 
 class JobList extends React.Component {
 	constructor(props) {
@@ -71,6 +71,7 @@ class JobList extends React.Component {
 						title={element.title}
 						image={element.pictures[1]}
 						name={element.name}
+						updatedAt={element.updatedAt}
 					/>
 				</li>);
 		}
@@ -80,11 +81,13 @@ class JobList extends React.Component {
 			return <p> Loading...</p>
 		} else {
 			return (
-				<div className='job-list container-board'>
-					<div className='job-list__body'>
-						<ul>
-							{arrayLi}
-						</ul>
+				<div className='backgr-color'>
+					<div className='job-list container-board'>
+						<div className='job-list__body'>
+							<ul>
+								{arrayLi}
+							</ul>
+						</div>
 					</div>
 				</div>
 			)

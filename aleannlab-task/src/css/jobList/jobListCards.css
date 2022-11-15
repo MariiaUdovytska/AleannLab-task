@@ -6,7 +6,7 @@
 .cardd__info{
 	display: flex;
 	flex-direction: row;
-	flex: 1 1 75%;
+	flex: 1 1 70%;
 	padding: 0px 5px;
 }
 .cardd__info-img{
@@ -42,7 +42,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: end;
-	flex: 1 1 25%;
+	flex: 1 1 30%;
 	margin: 0px -15px;
 	padding: 0px 5px;
 }
@@ -92,7 +92,12 @@
 		flex: 1 1 70%;
 	}
 	.cardd__icons{
-		flex: 1 1 30%;
+		flex: 1 1 auto;
+	}
+}
+@media (max-width:1055px){
+	.cardd__info{
+		flex: 1 1 65%;
 	}
 }
 @media (max-width:956px) {
@@ -110,6 +115,11 @@
 		padding: 0px 5px;
 	}
 }
+@media (max-width:826px){
+	.cardd__info{
+		flex: 1 1 55%;
+	}
+}
 @media (max-width:748px){
 	.cardd{
 		display: flex;
@@ -118,6 +128,7 @@
 	.cardd__icons{
 		margin-bottom: 17px;
 		justify-content: space-between;
+		align-items: flex-end;
 	}
 	.cardd__icons-stars{
 		margin-left: 85px;
@@ -144,11 +155,22 @@
 		font-size: 10px;
 	}
 }
-@media (max-width:380px){
+@media (max-width:390px){
 	.cardd__info-common {
 		padding-left: 10px;
 	}
 	.cardd__icons-stars{
-		margin-left: 75px;
+		margin-left: 73px;
+		width: 70px;
+	}
+	.cardd__icons-posted span {
+		margin-right: 10px;
+	}
+	.cardd__icons-posted-bookmark{
+		display: flex;
+	}
+	.cardd__icons-posted-bookmark{
+		display: flex;
+		align-self: center;
 	}
 }

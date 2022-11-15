@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/jobDetailed/jobDetailed.css';
 import dataResponse from '../data/dataResponse.json';
+import DataCalculator from '../dataCalculator/DataCalculator';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
 
@@ -114,7 +115,7 @@ class JobDetailed extends React.Component {
 									€ {job.salary}
 									<span>Brutto, per year</span>
 								</div>
-								<span className='job-detailed__body-main-posted'>Posted 2 days ago</span>
+								<DataCalculator updatedAt={job.updatedAt} class={true} />
 							</div>
 							<JobDetailedDescription description={job.description} />
 						</div>
