@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import dataResponse from '../data/dataResponse.json';
 import JobListCards from './JobListCards';
 
-var isDebug = false;
+var isDebug = true;
 
 class JobList extends React.Component {
 	constructor(props) {
@@ -78,6 +78,7 @@ class JobList extends React.Component {
 							image={element.pictures[1]}
 							name={element.name}
 							updatedAt={element.updatedAt}
+							location={element.location}
 						/>
 					</Link>
 				</li>);
