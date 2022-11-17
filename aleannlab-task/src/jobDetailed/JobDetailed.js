@@ -5,11 +5,11 @@ import dataResponse from '../data/dataResponse.json';
 import DataCalculator from '../dataCalculator/DataCalculator';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
-// import Map from '../coordinates/Map';
+import Map from '../coordinates/Map';
 
 var isDebug = false;
 
-function JobDetailed(props) {
+function JobDetailed() {
 	const [sizeWidthType, setSizeWidthType] = useState('desktop');
 	useEffect(() => {
 		let getWindowDimensions = () => {
@@ -25,10 +25,8 @@ function JobDetailed(props) {
 				setSizeWidthType('desktop');
 		}
 
-		// this.loadData();
 		handleWindowDimensions();
 		window.addEventListener('resize', handleWindowDimensions);
-		// Указываем, как сбросить этот эффект:
 		return function cleanup() {
 			window.removeEventListener('resize', handleWindowDimensions);
 		};
@@ -128,7 +126,7 @@ function JobDetailed(props) {
 				</div>
 				<div className='job-detailed__map'>
 					<h4>Contacts</h4>
-					{/* <Map /> */}
+					<Map lat={job.location.lat} long={job.location.long} />
 				</div>
 			</div>
 		)
