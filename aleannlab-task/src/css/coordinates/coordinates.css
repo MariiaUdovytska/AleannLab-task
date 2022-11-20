@@ -1,6 +1,21 @@
 @import '~leaflet/dist/leaflet.css';
 
 .leaflet-container {
-	height: 200px;
-	width: 200px;
+	min-height: 218px;
+	width: 100%;
+	position: relative;
+}
+.leaflet-container::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+	background-color:#2a3047;
+	opacity: 0.5;
+}
+.leaflet-marker-icon{
+	filter: invert(70%) sepia(96%) saturate(1%) hue-rotate(16deg) brightness(99%) contrast(103%);
 }

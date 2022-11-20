@@ -19,7 +19,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 function Map(position: MapProps){
 	return (
-	<MapContainer center={[position.lat, position.long]} zoom={10} scrollWheelZoom={false}>
+	<MapContainer center={[position.lat, position.long]} zoom={5} scrollWheelZoom={false}>
 		<TileLayer
 			url="https://maps.geoapify.com/v1/tile/dark-matter-brown/{z}/{x}/{y}.png?apiKey=4c81d020d86e42ef99ac09266f85ce3f"
 		/>

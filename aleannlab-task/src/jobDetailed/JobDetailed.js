@@ -5,7 +5,7 @@ import dataResponse from '../data/dataResponse.json';
 import DataCalculator from '../dataCalculator/DataCalculator';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
-import Map from '../coordinates/Map';
+import DetailedMap from './DetailedMap';
 
 var isDebug = false;
 
@@ -126,7 +126,14 @@ function JobDetailed() {
 				</div>
 				<div className='job-detailed__map'>
 					<h4>Contacts</h4>
-					<Map lat={job.location.lat} long={job.location.long} />
+					<DetailedMap
+						lat={job.location.lat}
+						long={job.location.long}
+						name={job.name}
+						email={job.email}
+						phone={job.phone}
+						address={job.address}
+					/>
 				</div>
 			</div>
 		)
