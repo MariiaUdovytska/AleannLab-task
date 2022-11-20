@@ -16,7 +16,6 @@ function JobListCards(props) {
 					<div>Department name • {props.name}</div>
 					<div>
 						<i className="bi bi-geo-alt-fill"></i>
-						{/* <span>loc</span> */}
 						<Locations lat={props.location.lat} lng={props.location.long} />
 					</div>
 				</div>

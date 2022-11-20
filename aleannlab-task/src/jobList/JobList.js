@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import dataResponse from '../data/dataResponse.json';
 import JobListCards from './JobListCards';
 
-var isDebug = true;
+var isDebug = false;
 
 class JobList extends React.Component {
 	constructor(props) {
