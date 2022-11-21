@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AleannLab-task/static/css/main.cc18b836.css",
+    "main.css": "/AleannLab-task/static/css/main.638c0ff4.css",
     "main.js": "/AleannLab-task/static/js/main.27d889e0.js",
     "static/js/787.3fb7e19e.chunk.js": "/AleannLab-task/static/js/787.3fb7e19e.chunk.js",
     "static/media/bootstrap-icons.woff?": "/AleannLab-task/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
@@ -10,12 +10,12 @@
     "static/media/ProximaNova-Bold.ttf": "/AleannLab-task/static/media/ProximaNova-Bold.7722451a8c88b6100185.ttf",
     "static/media/bootstrap-icons.woff2?": "/AleannLab-task/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
     "index.html": "/AleannLab-task/index.html",
-    "main.cc18b836.css.map": "/AleannLab-task/static/css/main.cc18b836.css.map",
+    "main.638c0ff4.css.map": "/AleannLab-task/static/css/main.638c0ff4.css.map",
     "main.27d889e0.js.map": "/AleannLab-task/static/js/main.27d889e0.js.map",
     "787.3fb7e19e.chunk.js.map": "/AleannLab-task/static/js/787.3fb7e19e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc18b836.css",
+    "static/css/main.638c0ff4.css",
     "static/js/main.27d889e0.js"
   ]
 }
