@@ -2,16 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import '../css/jobList/jobList.css';
 import dataResponse from '../data/dataResponse.json';
+import Job from '../types/JobType';
 import JobListCards from './JobListCards';
 
 var isDebug = false;
 
 function JobList() {
-	const [jobs, setJobs] = useState([]);
-	const [error, setError] = useState(null);
+	const [jobs, setJobs] = useState<Array<Job>>([]);
+	const [error, setError] = useState<Error | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	useEffect(() => {
-		let mapData = (data) => {
+		let mapData = (data:any) => {
 			setIsLoaded(true);
 			setJobs(data);
 		}
