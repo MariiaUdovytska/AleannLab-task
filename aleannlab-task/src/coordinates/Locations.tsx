@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-function Locations(props) {
+type MapPropsPosition = {
+	lat: number,
+	lng: number,
+};
+
+function Locations(props: MapPropsPosition) {
 	const myAPIKey = "4c81d020d86e42ef99ac09266f85ce3f";
 	const [city, setCity] = useState("");
 	const [country, setCountry] = useState("");

@@ -1,7 +1,11 @@
 import React from 'react';
 import '../css/jobDetailed/jobDetailedDescription.css';
 
-function JobDetailedDescription(props) {
+type DetailedDescriptionProps = {
+	description: string
+};
+
+function JobDetailedDescription(props: DetailedDescriptionProps) {
 	let description = props.description;
 	let data = description.split('Responsopilities:\n');
 	let first = data[0];

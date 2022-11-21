@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import '../css/jobDetailed/jobDetailedAdditional.css';
+import Job from '../types/JobType';
 
-function JobDetailedAdditional(props) {
+
+type DetailedAdditionalProps = {
+	additional:Job,
+	sizeWidthType: string,
+};
+
+function JobDetailedAdditional(props: DetailedAdditionalProps) {
 	let additional = props.additional;
 
 	const [move, setMove] = useState(0);
 
-	const [touchPosition, setTouchPosition] = useState(null);
+	const [touchPosition, setTouchPosition] = useState<number | null>(null) ;
 
 	const handleLeft = () => {
 		if (move === 0)
@@ -20,12 +27,12 @@ function JobDetailedAdditional(props) {
 		setMove(move + 1);
 	};
 
-	let handleTouchStart = (e) => {
+	let handleTouchStart = (e: React.TouchEvent<HTMLUListElement>) => {
 		let touchDown = e.touches[0].clientX;
 		setTouchPosition(touchDown);
 	}
 
-	let handleTouchMove = (e) => {
+	let handleTouchMove = (e: React.TouchEvent<HTMLUListElement>) => {
 		const touchDown = touchPosition
 		if (touchDown === null) {
 			return
