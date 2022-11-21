@@ -8,8 +8,7 @@ function App() {
 	return (
 		<div className="wrapper">
 			<div className='page'>
-				<BrowserRouter >
-					{/* <BrowserRouter basename="/AleannLab-task"> */}
+				<BrowserRouter basename="/AleannLab-task">
 					<main className='main'>
 						<Routes>
 							<Route path="/" element={<JobList />} />

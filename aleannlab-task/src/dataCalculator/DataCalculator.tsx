@@ -20,7 +20,7 @@ function DataCalculator({updatedAt, classPosted}:DataCalculatorProps) {
 	let d2 = new Date();
 
 	return (
-		<span className={((classPosted === true) ? 'job-detailed__body-main-posted' : '')}> Posted {dateDiff.inDays(d1, d2)} days &nbsp;ago</span >
+		<span className={((classPosted === true) ? 'job-detailed__body-main-posted' : '')}>Posted {dateDiff.inDays(d1, d2)} days&nbsp;ago</span >
 	)
 
 }

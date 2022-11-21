@@ -22,7 +22,7 @@ function JobDetailedAdditional(props: DetailedAdditionalProps) {
 	};
 
 	const handleRight = () => {
-		if (move === additional.pictures.length - ((props.sizeWidthType == 'desktop') ? 3 : 1))
+		if (move === additional.pictures.length - ((props.sizeWidthType === 'desktop') ? 3 : 1))
 			return;
 		setMove(move + 1);
 	};
