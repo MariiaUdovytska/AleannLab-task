@@ -80,6 +80,10 @@ function JobDetailed() {
 		if (job === undefined)
 			return (<>Wwong Id:{id}</>)
 
+		let thousand = /k/gi;
+		let dash = /-/gi;
+		let salary = job.salary.replace(thousand, '000').replace(dash, '—');
+
 		return (
 			<div className='job-detailed container-detailed'>
 				<div className='job-detailed__body'>
@@ -104,7 +108,7 @@ function JobDetailed() {
 						<div className='job-detailed__body-main-title'>
 							<h2>{job.title}</h2>
 							<div className='job-detailed__body-main-salary'>
-								€ {job.salary}
+								€ {salary}
 								<span>Brutto, per year</span>
 							</div>
 							<DataCalculator updatedAt={job.updatedAt} class={true} />
