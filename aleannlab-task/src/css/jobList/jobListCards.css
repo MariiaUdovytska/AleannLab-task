@@ -155,7 +155,7 @@
 		font-size: 10px;
 	}
 }
-@media (max-width:390px){
+@media (max-width:403px){
 	.cardd__info-common {
 		padding-left: 10px;
 	}
@@ -173,4 +173,7 @@
 		display: flex;
 		align-self: center;
 	}
+}
+@media (max-width:387px){
+	
 }

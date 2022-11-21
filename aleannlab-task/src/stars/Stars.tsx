@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/jobList/jobListCards.css';
 
-function Stars(props) {
+function Stars() {
 	const [rating, setRating] = useState(0);
 	let stars = [];
 

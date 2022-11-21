@@ -34,8 +34,8 @@
 		background-color:#fbfcff1b;
 	}
 }
-@media (max-width:380px){
+@media (max-width:387px){
 	.job-list__body ul li{
-		padding:17px 8px 27px;
+		padding:17px 5px 27px;
 	}
 }
