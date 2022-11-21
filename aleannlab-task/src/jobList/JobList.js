@@ -1,39 +1,25 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/jobList/jobList.css';
 import dataResponse from '../data/dataResponse.json';
 import JobListCards from './JobListCards';
 
 var isDebug = false;
 
-class JobList extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			error: null,
-			isLoaded: false,
-			jobs: []
-		};
-	}
-
-	componentDidMount() {
-		this.loadData();
-	}
-
-	mapData = (data) => {
-		this.setState({
-			isLoaded: true,
-			jobs: data
-		});
-	}
-	loadData = () => {
-
+function JobList() {
+	const [jobs, setJobs] = useState([]);
+	const [error, setError] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	useEffect(() => {
+		let mapData = (data) => {
+			setIsLoaded(true);
+			setJobs(data);
+		}
 		if (isDebug) {
-			this.mapData(dataResponse);
+			mapData(dataResponse);
 			return;
 		}
 
-		console.log("get data from api!!");
 		fetch(`https://api.json-generator.com/templates/ZM1r0eic3XEy/data`, {
 			method: "GET",
 			headers: {
@@ -46,54 +32,49 @@ class JobList extends React.Component {
 				if (response.ok) {
 					return response
 						.json()
-						.then(this.mapData);
+						.then(mapData);
 				}
-				throw new Error(`ничего не найдено`);
+				throw new Error(`Nothing found`);
 			})
 			.catch(err => {
-				this.setState({
-					isLoaded: true,
-					error: err
-				});
+				setIsLoaded(true);
+				setError(err);
 			});
+	}, []);
+
+	let arrayLi = [];
+
+	for (let index = 0; index < jobs.length; index++) {
+		const element = jobs[index];
+		arrayLi.push(
+			<li key={index}>
+				<JobListCards
+					id={element.id}
+					title={element.title}
+					image={element.pictures[1]}
+					name={element.name}
+					updatedAt={element.updatedAt}
+					lat={element.location.lat}
+					long={element.location.long}
+				/>
+			</li>);
 	}
-
-	render() {
-		const { error, isLoaded, jobs } = this.state;
-		let arrayLi = [];
-
-		for (let index = 0; index < jobs.length; index++) {
-			const element = jobs[index];
-			arrayLi.push(
-				<li key={index}>
-					<JobListCards
-						id={element.id}
-						title={element.title}
-						image={element.pictures[1]}
-						name={element.name}
-						updatedAt={element.updatedAt}
-						lat={element.location.lat}
-						long={element.location.long}
-					/>
-				</li>);
-		}
-		if (error) {
-			return <p> Error {error.message}</p>
-		} else if (!isLoaded) {
-			return <p> Loading...</p>
-		} else {
-			return (
-				<div className='backgr-color'>
-					<div className='job-list container-board'>
-						<div className='job-list__body'>
-							<ul>
-								{arrayLi}
-							</ul>
-						</div>
+	if (error) {
+		return <p> Error {error.message}</p>
+	} else if (!isLoaded) {
+		return <p> Loading...</p>
+	} else {
+		return (
+			<div className='backgr-color'>
+				<div className='job-list container-board'>
+					<div className='job-list__body'>
+						<ul>
+							{arrayLi}
+						</ul>
 					</div>
 				</div>
-			)
-		}
+			</div>
+		)
 	}
 }
 
