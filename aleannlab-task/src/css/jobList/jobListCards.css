@@ -41,7 +41,7 @@
 .cardd__icons{
 	display: flex;
 	flex-direction: row;
-	justify-content: end;
+	justify-content: flex-end;
 	flex: 1 1 30%;
 	margin: 0px -15px;
 	padding: 0px 5px;
@@ -173,7 +173,4 @@
 		display: flex;
 		align-self: center;
 	}
-}
-@media (max-width:387px){
-	
 }

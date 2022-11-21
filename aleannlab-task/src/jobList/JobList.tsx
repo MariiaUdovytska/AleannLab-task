@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import '../css/jobList/jobList.css';
+import authorizationMap from '../authorization/AuthorizationMap';
 import dataResponse from '../data/dataResponse.json';
 import Job from '../types/JobType';
 import JobListCards from './JobListCards';
@@ -26,7 +27,7 @@ function JobList() {
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json',
-				'Authorization': 'Bearer ' + 'wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
+				'Authorization': 'Bearer ' + authorizationMap,
 			}
 		})
 			.then(response => {

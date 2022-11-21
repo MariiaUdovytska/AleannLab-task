@@ -12,9 +12,9 @@ function App() {
 					{/* <BrowserRouter basename="/AleannLab-task"> */}
 					<main className='main'>
 						<Routes>
-							<Route exact path="/" element={<JobList />} />
-							<Route exact path="jobList" element={<JobList />} />
-							<Route path="/jobDetailed" element={<JobDetailed />} exact />
+							<Route path="/" element={<JobList />} />
+							<Route path="jobList" element={<JobList />} />
+							<Route path="/jobDetailed" element={<JobDetailed />} />
 						</Routes>
 					</main>
 				</BrowserRouter>

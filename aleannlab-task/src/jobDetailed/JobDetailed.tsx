@@ -6,6 +6,8 @@ import DataCalculator from '../dataCalculator/DataCalculator';
 import JobDetailedAdditional from './JobDetailedAdditional';
 import JobDetailedDescription from './JobDetailedDescription';
 import DetailedMap from './DetailedMap';
+import Job from '../types/JobType';
+import authorizationMap from '../authorization/AuthorizationMap';
 
 var isDebug = false;
 
@@ -32,11 +34,11 @@ function JobDetailed() {
 		};
 	}, []);
 
-	const [jobs, setJobs] = useState([]);
-	const [error, setError] = useState(null);
+	const [jobs, setJobs] = useState<Array<Job>>([]);
+	const [error, setError] = useState<Error | null>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	useEffect(() => {
-		let mapData = (data) => {
+		let mapData = (data:any) => {
 			setIsLoaded(true);
 			setJobs(data);
 		}
@@ -45,13 +47,12 @@ function JobDetailed() {
 			return;
 		}
 
-		console.log("get data from api!!");
 		fetch(`https://api.json-generator.com/templates/ZM1r0eic3XEy/data`, {
 			method: "GET",
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json',
-				'Authorization': 'Bearer ' + 'wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
+				'Authorization': 'Bearer ' + authorizationMap,
 			}
 		})
 			.then(response => {
@@ -60,7 +61,7 @@ function JobDetailed() {
 						.json()
 						.then(mapData);
 				}
-				throw new Error(`ничего не найдено`);
+				throw new Error(`Nothing found`);
 			})
 			.catch(err => {
 				setIsLoaded(true);
@@ -111,7 +112,7 @@ function JobDetailed() {
 								€ {salary}
 								<span>Brutto, per year</span>
 							</div>
-							<DataCalculator updatedAt={job.updatedAt} class={true} />
+							<DataCalculator updatedAt={job.updatedAt} classPosted={true} />
 						</div>
 						<JobDetailedDescription description={job.description} />
 					</div>
